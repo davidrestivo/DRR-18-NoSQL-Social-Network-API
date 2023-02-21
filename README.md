@@ -7,6 +7,12 @@ I built an API for a social network web application where users can share their 
 
 https://github.com/davidrestivo/DRR-18-NoSQL-Social-Network-API
 
+## Instruction
+
+To Start, clone this repository. Open this file in the Integrated Terminal. Install all of your dependencies. In the terminal, type: npm start
+
+Then go to either Thunder Client, or an equivalent, and setup your commands as in the video demos below and run each.
+
 
 ## Video Examples
 
