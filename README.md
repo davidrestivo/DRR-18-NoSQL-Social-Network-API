@@ -1,12 +1,24 @@
 # DRR-18-NoSQL-Social-Network-API
 
 ## Description
-I built an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. I used Express.js for routing, a MongoDB database, and the Mongoose ODM. I setup a demonstration via Thunder Client to Query the databases, adding to, and deleting from for 4 different sections - Users, Thoughts, Friends and Reactions.
+I built an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. I used Express.js for routing, a MongoDB database, and the Mongoose ODM. I setup a demonstration via Thunder Client to Query the databases, changing, adding to, and deleting from for 4 different sections - Users, Thoughts, Friends and Reactions.
 
 ## Links
 
 https://github.com/davidrestivo/DRR-18-NoSQL-Social-Network-API
 
 
-## Video Example
+## Video Examples
+
+## User:
+    https://drive.google.com/file/d/1O7g6mCxqJ085R-NvXKX9RP3qNUTtclAX/view
+
+## Thoughts:
+    https://drive.google.com/file/d/1osbp218K9HC0odtmmAVDSBIYR-mq4mmb/view
+
+## Friends and Reactions
+    
+
+
+
 
