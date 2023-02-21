@@ -69,7 +69,7 @@ module.exports = {
                 return res.status(400).json({ message: 'No user found with this ID!!!'});
             }
 
-            const friend = await User.findByIdAndUpdate({_id: req.params.friendId}, {$push: {friends: req.params.friendId}});
+            const friend = await User.findByIdAndUpdate({_id: req.params.friendId}, {$push: {friends: req.params.id}});
             if (!friend) {
                 return res.status(400).json({ message: 'No friend found with this ID!!!', err });
             }
@@ -87,7 +87,7 @@ module.exports = {
                 return res.status(400).json({ message: 'No user found with this ID!!!'});
             }
 
-            const friend = await User.findByIdAndUpdate({_id: req.params.id}, {$pull: {friends: req.params.friendId}});
+            const friend = await User.findByIdAndUpdate({_id: req.params.friendId}, {$pull: {friends: req.params.id}});
             if (!friend) {
                 return res.json({ message: 'No friend found with this ID!!!'});
             }

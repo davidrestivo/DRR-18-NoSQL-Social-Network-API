@@ -5,7 +5,7 @@ module.exports = {
     async createReaction(req, res) {
         try {
             const reaction = await Reaction.create(req.body);
-
+            
             const thought = await Thought.findOneAndUpdate(req.params.thoughtId , { $push: { reactions: reaction } }, { new: true });
             if (!thought) {
                 return res.status(400).json({ message: 'No reaction found with this ID!!!'});

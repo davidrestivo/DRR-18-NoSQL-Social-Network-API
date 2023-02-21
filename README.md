@@ -14,10 +14,12 @@ https://github.com/davidrestivo/DRR-18-NoSQL-Social-Network-API
     https://drive.google.com/file/d/1O7g6mCxqJ085R-NvXKX9RP3qNUTtclAX/view
 
 ## Thoughts:
-    https://drive.google.com/file/d/1osbp218K9HC0odtmmAVDSBIYR-mq4mmb/view
+    https://drive.google.com/file/d/1s3TkBt_myrVjTeCFVqQmwsVoAq4lt3c9/view
 
 ## Friends and Reactions
-    
+    https://drive.google.com/file/d/17Dc8X8jNbYtEAqYpawzmQGQBu-Ej8p0_/view
+
+
 
 
 

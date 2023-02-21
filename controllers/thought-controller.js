@@ -4,8 +4,8 @@ module.exports = {
     // GET /api/thoughts
     async getAllThoughts(req, res) {
         try {
-            const thoughts = await Thought.find();
-            res.json(thoughts);
+            const thoughts = await Thought.find()
+                    res.json(thoughts);
         } catch (err) {
             res.status(400).json({ message: 'Error getting all thoughts!!!', err });
         }
@@ -13,22 +13,24 @@ module.exports = {
 
     // GET /api/thoughts/:id
     async getThoughtById(req, res) {
-        try {
-            const thought = await Thought.findOne({_id: req.params.id});
-            if (!thought) {
-                return res.status(400).json({ message: 'No thought found with this ID!!!', err });
-            }
-            res.json(thought);
-        } catch (err) {
-            res.status(400).json({ message: 'Error getting single thought!!! ', err });
-        }
+        // try {
+            const thought = await Thought.findOne({ _id: req.params.id })
+                .populate('reactions')
+                .then((thought => !thought
+                    ? res.status(404).json({ message: 'No thought with that ID' })
+                    : res.json(thought)))
+
+        // } catch (err) {
+            .catch(err => res.status(400).json({ message: 'Error getting single thought!!! ', err }));
+            
+        // }
     },
 
     // POST /api/thoughts
     async createThought(req, res) {
         try {
             const thought = await Thought.create(req.body);
-            await User.findOneAndUpdate({_id: req.params.id}, {$push: {thoughts: thought._id}});
+            await User.findOneAndUpdate({ _id: req.params.id }, { $push: { thoughts: thought._id } });
             res.json(thought);
         } catch (err) {
             res.status(400).json({ message: 'Error creating thought!!!', err });
@@ -38,7 +40,7 @@ module.exports = {
     // PUT /api/thoughts
     async updateThought(req, res) {
         try {
-            const thought = await Thought.findOneAndUpdate({_id: req.params.id}, {$set: req.body}, {new: true});
+            const thought = await Thought.findOneAndUpdate({ _id: req.params.id }, { $set: req.body }, { new: true });
             if (!thought) {
                 return res.status(400).json({ message: 'No thought found with this ID!!!', err });
             }
@@ -51,7 +53,7 @@ module.exports = {
     // DELETE /api/thoughts/:id
     async deleteThought(req, res) {
         try {
-            const thought = await Thought.findOneAndDelete({_id: req.params.id});
+            const thought = await Thought.findOneAndDelete({ _id: req.params.id });
             if (!thought) {
                 return res.status(400).json({ message: 'No thought found with this ID!!!', err });
             }
